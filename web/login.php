@@ -17,7 +17,7 @@
       if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $user = $_POST['username'];
         $pass = $_POST['password'];
-        $query = "SELECT * FROM users WHERE username='$user' and password='$password'";
+        $query = "SELECT * FROM users WHERE username='$user' and password='$pass'";
         $result = pg_query($query) or die('La consulta fallo: ' . pg_last_error());
         if (pg_num_rows($result) == 1) {
           echo "<p>Login: OK</p>";
