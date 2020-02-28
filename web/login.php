@@ -19,7 +19,7 @@
         $pass = $_POST['password'];
         $query = "SELECT * FROM users WHERE username='$user' and password='$password'";
         $result = pg_query($query) or die('La consulta fallo: ' . pg_last_error());
-        if (pg_num_rowd($result) == 1) {
+        if (pg_num_rows($result) == 1) {
           echo "<p>Login: OK</p>";
         } else {
           echo "<p>Login: Failed</p>";
